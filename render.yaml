@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: n8n
+    env: node
+    region: oregon  # change if you want, e.g. frankfurt
+    plan: free
+    buildCommand: npm install
+    startCommand: n8n start
+    envVars:
+      - key: GENERIC_TIMEZONE
+        value: Asia/Kolkata
+      - key: WEBHOOK_URL
+        value: https://n8n-yourname.onrender.com/
+      - key: N8N_HOST
+        value: n8n-yourname.onrender.com
+      - key: N8N_PORT
+        value: 10000
+      - key: N8N_PROTOCOL
+        value: https
+      - key: EXECUTIONS_PROCESS
+        value: main
+      - key: N8N_ENCRYPTION_KEY
+        value: mySuperSecretKey123
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: admin
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: password123
